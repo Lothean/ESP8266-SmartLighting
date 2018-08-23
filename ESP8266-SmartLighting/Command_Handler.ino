@@ -35,10 +35,12 @@ void instantMessageHandler (byte command_type, byte command, byte payload[]) {
         backupColor[1] = currentColor[1];
         newColor[0] = 0;
         newColor[1] = 0;
+        regularFadeUpdate(default_fade_delay);
         break;
       case power_on:
         newColor[0] = backupColor[0];
         newColor[1] = backupColor[1];
+        regularFadeUpdate(default_fade_delay);
         break;
       case set_cold_white:
         if (payload[0] > 100) { //checking that we do not get more than 100%
